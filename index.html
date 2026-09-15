@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,11 @@
     <title>Jeeva V | AI & ML Portfolio</title>
 
     <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -16,56 +22,84 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
+            background: #f5f7fb;
             color: #1f2937;
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(255,255,255,0.96);
-            padding: 18px 8%;
+
+            background: rgba(255, 255, 255, 0.97);
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+            padding: 18px 8%;
+
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
             z-index: 1000;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 23px;
             font-weight: bold;
             color: #111827;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 28px;
+            list-style: none;
+            gap: 30px;
         }
 
         nav ul li a {
-            text-decoration: none;
             color: #374151;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
             color: #2563eb;
         }
 
-        /* HERO */
+
+        /* =========================
+           HOME SECTION
+        ========================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
             text-align: center;
-            padding: 100px 20px 60px;
-            background: linear-gradient(135deg, #eef4ff, #ffffff);
+
+            padding: 120px 20px 70px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef4ff,
+                    #ffffff
+                );
         }
 
         .hero-content {
@@ -73,36 +107,43 @@
         }
 
         .hero h1 {
-            font-size: 64px;
+            font-size: 68px;
+            font-weight: 800;
             color: #111827;
             margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
         .hero h2 {
-            font-size: 26px;
-            font-weight: 500;
+            font-size: 25px;
+            font-weight: 600;
             color: #2563eb;
             margin-bottom: 25px;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #4b5563;
             max-width: 700px;
             margin: auto;
+
+            font-size: 18px;
+            color: #4b5563;
         }
 
         .buttons {
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            margin: 6px;
+
+            padding: 13px 27px;
+
+            margin: 5px;
+
             border-radius: 8px;
-            text-decoration: none;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
@@ -113,7 +154,7 @@
 
         .primary:hover {
             background: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .secondary {
@@ -124,84 +165,151 @@
         .secondary:hover {
             background: #2563eb;
             color: white;
+            transform: translateY(-3px);
         }
 
-        /* SECTIONS */
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
         section {
             padding: 90px 8%;
         }
 
         .section-title {
             text-align: center;
+
             font-size: 36px;
-            margin-bottom: 45px;
+
             color: #111827;
+
+            margin-bottom: 45px;
         }
 
         .section-title::after {
             content: "";
+
             display: block;
-            width: 60px;
+
+            width: 65px;
             height: 4px;
+
             background: #2563eb;
+
             margin: 12px auto;
-            border-radius: 5px;
+
+            border-radius: 10px;
         }
 
-        /* ABOUT */
-        .about-box {
-            max-width: 900px;
+
+        /* =========================
+           PROFILE SECTION
+        ========================= */
+
+        .profile-container {
+            max-width: 950px;
+
             margin: auto;
+
             background: white;
-            padding: 35px;
+
+            padding: 40px;
+
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.06);
         }
 
-        .about-box p {
+        .profile-container p {
             font-size: 17px;
+
             color: #4b5563;
+
+            text-align: justify;
         }
 
-        /* EDUCATION */
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
         .education-container {
-            max-width: 900px;
+            max-width: 950px;
+
             margin: auto;
         }
 
         .education-card {
             background: white;
+
             padding: 30px;
-            margin-bottom: 22px;
+
+            margin-bottom: 25px;
+
+            border-radius: 12px;
+
             border-left: 5px solid #2563eb;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+            box-shadow:
+                0 7px 25px rgba(0, 0, 0, 0.06);
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
         }
 
         .education-card h3 {
+            font-size: 22px;
+
             color: #111827;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
         }
 
-        .education-card .year {
-            color: #2563eb;
+        .education-card p {
+            color: #4b5563;
+
+            margin: 4px 0;
+        }
+
+        .education-year {
+            color: #2563eb !important;
+
             font-weight: bold;
         }
 
-        /* SKILLS */
+
+        /* =========================
+           SKILLS
+        ========================= */
+
         .skills-container {
             max-width: 1100px;
+
             margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
         }
 
         .skill-card {
             background: white;
-            padding: 28px;
+
+            padding: 30px;
+
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+            box-shadow:
+                0 7px 25px rgba(0, 0, 0, 0.06);
+
             transition: 0.3s;
         }
 
@@ -211,54 +319,113 @@
 
         .skill-card h3 {
             color: #2563eb;
+
+            font-size: 20px;
+
             margin-bottom: 12px;
         }
 
         .skill-card p {
             color: #4b5563;
+
+            font-size: 16px;
         }
 
-        /* INTERESTS */
-        .interest-box {
-            max-width: 900px;
+
+        /* =========================
+           AREAS OF INTEREST
+        ========================= */
+
+        .interest-container {
+            max-width: 950px;
+
             margin: auto;
-            text-align: center;
+
             background: white;
-            padding: 35px;
+
+            padding: 40px;
+
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.06);
         }
 
-        .interest-box p {
-            font-size: 18px;
+        .interest-container p {
             color: #4b5563;
+
+            font-size: 18px;
         }
 
-        /* CONTACT */
+        .interest-list {
+            margin-top: 25px;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .interest-tag {
+            padding: 10px 18px;
+
+            background: #eef4ff;
+
+            color: #2563eb;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact-container {
-            max-width: 900px;
+            max-width: 1000px;
+
             margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
         }
 
         .contact-card {
             background: white;
-            padding: 25px;
+
+            padding: 30px;
+
             border-radius: 12px;
+
             text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+            box-shadow:
+                0 7px 25px rgba(0, 0, 0, 0.06);
         }
 
         .contact-card h3 {
             color: #2563eb;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
         }
 
+        .contact-card p,
         .contact-card a {
-            color: #374151;
-            text-decoration: none;
+            color: #4b5563;
+
             word-break: break-word;
         }
 
@@ -266,15 +433,30 @@
             color: #2563eb;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
-            text-align: center;
-            padding: 25px;
             background: #111827;
+
             color: white;
+
+            text-align: center;
+
+            padding: 25px;
         }
 
-        /* MOBILE */
+        footer p {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
         @media (max-width: 768px) {
 
             nav {
@@ -286,16 +468,15 @@
             }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 43px;
             }
 
             .hero h2 {
-                font-size: 21px;
+                font-size: 20px;
             }
 
-            .skills-container,
-            .contact-container {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 16px;
             }
 
             section {
@@ -305,51 +486,117 @@
             .section-title {
                 font-size: 30px;
             }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                padding: 25px;
+            }
+
+            .profile-container p {
+                text-align: left;
+            }
+
+            .education-card {
+                padding: 25px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
     <nav>
-        <div class="logo">JEEVA V</div>
+
+        <div class="logo">
+            JEEVA V
+        </div>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#interests">Interests</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#profile">Profile</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#interests">Interests</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- HOME -->
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
     <section class="hero" id="home">
 
         <div class="hero-content">
 
-            <h1>JEEVA V</h1>
+            <h1>
+                JEEVA V
+            </h1>
 
-            <h2>B.Tech Artificial Intelligence & Machine Learning</h2>
+            <h2>
+                B.Tech Artificial Intelligence & Machine Learning
+            </h2>
 
             <p>
-                B.Tech AI & ML student passionate about Artificial Intelligence,
-                Machine Learning, Deep Learning and intelligent systems.
+                B.Tech Artificial Intelligence and Machine Learning student
+                with a foundation in Machine Learning, Deep Learning,
+                and modern AI technologies.
             </p>
 
             <div class="buttons">
 
-                <a href="#about" class="btn primary">
+                <a
+                    href="#profile"
+                    class="btn primary"
+                >
                     Explore My Profile
                 </a>
 
-                <a href="https://www.linkedin.com/in/jeeva-v-94592138B"
-                   target="_blank"
-                   class="btn secondary">
-                    LinkedIn
+
+                <a
+                    href="https://www.linkedin.com/in/jeeva-v-94592138B"
+                    target="_blank"
+                    class="btn secondary"
+                >
+                    View LinkedIn
                 </a>
 
             </div>
@@ -359,12 +606,18 @@
     </section>
 
 
-    <!-- ABOUT -->
-    <section id="about">
 
-        <h2 class="section-title">Profile</h2>
+    <!-- =========================
+         PROFILE
+    ========================= -->
 
-        <div class="about-box">
+    <section id="profile">
+
+        <h2 class="section-title">
+            Profile
+        </h2>
+
+        <div class="profile-container">
 
             <p>
                 B.Tech Artificial Intelligence and Machine Learning student
@@ -383,31 +636,50 @@
     </section>
 
 
-    <!-- EDUCATION -->
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
     <section id="education">
 
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title">
+            Education
+        </h2>
 
         <div class="education-container">
 
+
+            <!-- UNIVERSITY -->
+
             <div class="education-card">
 
-                <h3>S-VYASA Deemed to be University</h3>
+                <h3>
+                    S-VYASA Deemed to be University
+                </h3>
 
-                <p>B.Tech - Artificial Intelligence & Machine Learning</p>
+                <p>
+                    B.Tech - Artificial Intelligence & Machine Learning
+                </p>
 
-                <p class="year">
+                <p class="education-year">
                     2024 - 2028 (Expected)
                 </p>
 
-                <p>Bengaluru, Karnataka</p>
+                <p>
+                    Bengaluru, Karnataka
+                </p>
 
             </div>
 
 
+            <!-- PU COLLEGE -->
+
             <div class="education-card">
 
-                <h3>Sri Edu PU College</h3>
+                <h3>
+                    Sri Edu PU College
+                </h3>
 
                 <p>
                     2nd PUC (Class 12) - 2023-2024
@@ -417,26 +689,39 @@
                     1st PUC (Class 11) - 2022-2023
                 </p>
 
-                <p>Bengaluru, Karnataka</p>
+                <p>
+                    Bengaluru, Karnataka
+                </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- SKILLS -->
+
+    <!-- =========================
+         TECHNICAL SKILLS
+    ========================= -->
+
     <section id="skills">
 
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
 
         <div class="skills-container">
 
 
+            <!-- PROGRAMMING -->
+
             <div class="skill-card">
 
-                <h3>Programming</h3>
+                <h3>
+                    Programming
+                </h3>
 
                 <p>
                     Python, JavaScript, C (Basic)
@@ -445,9 +730,13 @@
             </div>
 
 
+            <!-- WEB -->
+
             <div class="skill-card">
 
-                <h3>Web Development</h3>
+                <h3>
+                    Web
+                </h3>
 
                 <p>
                     HTML, CSS, React
@@ -456,9 +745,13 @@
             </div>
 
 
+            <!-- MACHINE LEARNING -->
+
             <div class="skill-card">
 
-                <h3>Machine Learning</h3>
+                <h3>
+                    Machine Learning
+                </h3>
 
                 <p>
                     Supervised & Unsupervised Learning,
@@ -471,9 +764,13 @@
             </div>
 
 
+            <!-- ML FUNDAMENTALS -->
+
             <div class="skill-card">
 
-                <h3>ML Fundamentals</h3>
+                <h3>
+                    ML Fundamentals
+                </h3>
 
                 <p>
                     Train-Test Split, Feature Scaling,
@@ -486,9 +783,13 @@
             </div>
 
 
+            <!-- LIBRARIES -->
+
             <div class="skill-card">
 
-                <h3>Libraries & Frameworks</h3>
+                <h3>
+                    Libraries
+                </h3>
 
                 <p>
                     NumPy, Pandas, Matplotlib,
@@ -498,78 +799,158 @@
             </div>
 
 
+            <!-- DATABASE -->
+
             <div class="skill-card">
 
-                <h3>Currently Learning</h3>
+                <h3>
+                    Database
+                </h3>
 
                 <p>
-                    SQL & Database Concepts<br>
-                    Deep Learning<br>
-                    CNN
+                    SQL & Database Concepts
+                    <br>
+                    <strong>(Learning)</strong>
                 </p>
 
             </div>
 
+
+            <!-- DEEP LEARNING -->
+
+            <div class="skill-card">
+
+                <h3>
+                    Deep Learning
+                </h3>
+
+                <p>
+                    Deep Learning, CNN
+                    <br>
+                    <strong>(Learning)</strong>
+                </p>
+
+            </div>
+
+
         </div>
 
     </section>
 
 
-    <!-- INTERESTS -->
+
+    <!-- =========================
+         AREAS OF INTEREST
+    ========================= -->
+
     <section id="interests">
 
-        <h2 class="section-title">Areas of Interest</h2>
+        <h2 class="section-title">
+            Areas of Interest
+        </h2>
 
-        <div class="interest-box">
+        <div class="interest-container">
 
             <p>
-                Artificial Intelligence &nbsp; • &nbsp;
-                Machine Learning &nbsp; • &nbsp;
-                Deep Learning &nbsp; • &nbsp;
-                AI in Healthcare &nbsp; • &nbsp;
-                Intelligent Systems &nbsp; • &nbsp;
-                Research &nbsp; • &nbsp;
-                Emerging Technologies
+                Interested in Artificial Intelligence,
+                Machine Learning, healthcare applications,
+                intelligent systems, research and
+                emerging technologies.
             </p>
+
+
+            <div class="interest-list">
+
+                <span class="interest-tag">
+                    Artificial Intelligence
+                </span>
+
+                <span class="interest-tag">
+                    Machine Learning
+                </span>
+
+                <span class="interest-tag">
+                    Deep Learning
+                </span>
+
+                <span class="interest-tag">
+                    AI in Healthcare
+                </span>
+
+                <span class="interest-tag">
+                    Intelligent Systems
+                </span>
+
+                <span class="interest-tag">
+                    Research
+                </span>
+
+                <span class="interest-tag">
+                    Emerging Technologies
+                </span>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- CONTACT -->
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
     <section id="contact">
 
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title">
+            Contact
+        </h2>
 
         <div class="contact-container">
 
 
+            <!-- EMAIL -->
+
             <div class="contact-card">
 
-                <h3>Email</h3>
+                <h3>
+                    Email
+                </h3>
 
                 <a href="mailto:vj224057@gmail.com">
+
                     vj224057@gmail.com
+
                 </a>
 
             </div>
 
 
+            <!-- PHONE -->
+
             <div class="contact-card">
 
-                <h3>Phone</h3>
+                <h3>
+                    Phone
+                </h3>
 
                 <a href="tel:8296992469">
+
                     8296992469
+
                 </a>
 
             </div>
 
 
+            <!-- LOCATION -->
+
             <div class="contact-card">
 
-                <h3>Location</h3>
+                <h3>
+                    Location
+                </h3>
 
                 <p>
                     Bengaluru, Banashankari
@@ -578,23 +959,34 @@
             </div>
 
 
+            <!-- LINKEDIN -->
+
             <div class="contact-card">
 
-                <h3>LinkedIn</h3>
+                <h3>
+                    LinkedIn
+                </h3>
 
-                <a href="https://www.linkedin.com/in/jeeva-v-94592138B"
-                   target="_blank">
+                <a
+                    href="https://www.linkedin.com/in/jeeva-v-94592138B"
+                    target="_blank"
+                >
                     linkedin.com/in/jeeva-v-94592138B
                 </a>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
         <p>
@@ -603,5 +995,7 @@
 
     </footer>
 
+
 </body>
+
 </html>
