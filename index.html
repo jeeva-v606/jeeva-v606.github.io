@@ -4,259 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jeeva V | AI/ML Portfolio</title>
+    <title>Jeeva V | AI & ML Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #07111f;
-            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
             line-height: 1.6;
         }
 
+        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #0b1728;
+            background: rgba(255,255,255,0.96);
             padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             z-index: 1000;
-            border-bottom: 1px solid #243b55;
         }
 
-        nav h2 {
-            display: inline;
-            color: #55aaff;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #111827;
         }
 
         nav ul {
-            float: right;
             list-style: none;
+            display: flex;
+            gap: 28px;
         }
 
-        nav ul li {
-            display: inline-block;
-            margin-left: 20px;
-        }
-
-        nav a {
-            color: white;
+        nav ul li a {
             text-decoration: none;
+            color: #374151;
+            font-weight: 500;
         }
 
-        nav a:hover {
-            color: #55aaff;
+        nav ul li a:hover {
+            color: #2563eb;
         }
 
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 20px 50px;
-            background: linear-gradient(135deg, #07111f, #102b49);
+            padding: 100px 20px 60px;
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 70px;
+            font-size: 64px;
+            color: #111827;
             margin-bottom: 10px;
         }
 
-        .hero h1 span {
-            color: #55aaff;
-        }
-
         .hero h2 {
-            color: #d7e3ef;
-            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 25px;
         }
 
         .hero p {
+            font-size: 18px;
+            color: #4b5563;
             max-width: 700px;
             margin: auto;
-            color: #aebdcc;
-            font-size: 18px;
         }
 
         .buttons {
             margin-top: 30px;
         }
 
-        .button {
+        .btn {
             display: inline-block;
-            padding: 12px 24px;
-            margin: 8px;
+            padding: 12px 25px;
+            margin: 6px;
             border-radius: 8px;
             text-decoration: none;
-            background: #287ac2;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #2563eb;
             color: white;
         }
 
-        .button:hover {
-            background: #3b94e5;
+        .primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
 
+        .secondary {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .secondary:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* SECTIONS */
         section {
             padding: 90px 8%;
         }
 
-        .title {
+        .section-title {
             text-align: center;
+            font-size: 36px;
             margin-bottom: 45px;
+            color: #111827;
         }
 
-        .title h2 {
-            font-size: 38px;
-            color: #55aaff;
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            margin: 12px auto;
+            border-radius: 5px;
         }
 
-        .title p {
-            color: #91a5b8;
-        }
-
-        .about {
+        /* ABOUT */
+        .about-box {
             max-width: 900px;
             margin: auto;
-            text-align: center;
-            color: #b9c7d5;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .about-box p {
             font-size: 17px;
+            color: #4b5563;
         }
 
-        .education-box,
-        .project,
-        .skill-box,
-        .research-box,
-        .certificate {
-            background: #0d1c2d;
-            border: 1px solid #243b55;
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .education {
-            max-width: 850px;
+        /* EDUCATION */
+        .education-container {
+            max-width: 900px;
             margin: auto;
         }
 
-        .education-box {
-            margin-bottom: 20px;
+        .education-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 22px;
+            border-left: 5px solid #2563eb;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
         }
 
-        .education-box h3,
-        .project h3,
-        .skill-box h3,
-        .research-box h3,
-        .certificate h3 {
-            color: #55aaff;
-            margin-bottom: 10px;
+        .education-card h3 {
+            color: #111827;
+            margin-bottom: 8px;
         }
 
-        .education-box p,
-        .project p,
-        .research-box p,
-        .certificate p {
-            color: #aebdcc;
+        .education-card .year {
+            color: #2563eb;
+            font-weight: bold;
         }
 
-        .skills {
+        /* SKILLS */
+        .skills-container {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 22px;
         }
 
-        .skill-box ul {
-            padding-left: 20px;
-            color: #b9c7d5;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project {
+        .skill-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
 
-        .project:hover {
+        .skill-card:hover {
             transform: translateY(-5px);
-            border-color: #55aaff;
         }
 
-        .technology {
-            margin-top: 15px;
-            color: #55aaff;
-            font-size: 14px;
+        .skill-card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
         }
 
-        .research-box {
-            max-width: 850px;
+        .skill-card p {
+            color: #4b5563;
+        }
+
+        /* INTERESTS */
+        .interest-box {
+            max-width: 900px;
             margin: auto;
             text-align: center;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
-        .research-tags {
-            margin-top: 20px;
+        .interest-box p {
+            font-size: 18px;
+            color: #4b5563;
         }
 
-        .tag {
-            display: inline-block;
-            background: #142c46;
-            border: 1px solid #315779;
-            padding: 8px 14px;
-            margin: 5px;
-            border-radius: 20px;
-            color: #cbd9e6;
-        }
-
-        .certificates {
+        /* CONTACT */
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
-        .contact {
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
         }
 
-        .contact p {
-            color: #aebdcc;
-            margin-bottom: 20px;
+        .contact-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
         }
 
+        .contact-card a {
+            color: #374151;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            color: #2563eb;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 30px;
-            background: #050d17;
-            color: #8093a6;
+            padding: 25px;
+            background: #111827;
+            color: white;
         }
 
-        @media (max-width: 700px) {
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
 
             nav ul {
                 display: none;
             }
 
             .hero h1 {
-                font-size: 48px;
+                font-size: 42px;
             }
 
-            .skills,
-            .projects,
-            .certificates {
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .skills-container,
+            .contact-container {
                 grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 30px;
             }
         }
     </style>
@@ -264,46 +311,45 @@
 
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
-        <h2>Jeeva V.</h2>
+        <div class="logo">JEEVA V</div>
 
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#research">Research</a></li>
+            <li><a href="#interests">Interests</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
 
+    <!-- HOME -->
     <section class="hero" id="home">
 
-        <div>
+        <div class="hero-content">
 
-            <h1>Jeeva <span>V.</span></h1>
+            <h1>JEEVA V</h1>
 
-            <h2>
-                B.Tech Artificial Intelligence & Machine Learning
-            </h2>
+            <h2>B.Tech Artificial Intelligence & Machine Learning</h2>
 
             <p>
-                AI/ML student passionate about Machine Learning,
-                Deep Learning and emerging Artificial Intelligence
-                technologies, with a growing interest in AI research
-                and healthcare applications.
+                B.Tech AI & ML student passionate about Artificial Intelligence,
+                Machine Learning, Deep Learning and intelligent systems.
             </p>
 
             <div class="buttons">
 
-                <a href="#projects" class="button">
-                    View Projects
+                <a href="#about" class="btn primary">
+                    Explore My Profile
                 </a>
 
-                <a href="#contact" class="button">
-                    Contact Me
+                <a href="https://www.linkedin.com/in/jeeva-v-94592138B"
+                   target="_blank"
+                   class="btn secondary">
+                    LinkedIn
                 </a>
 
             </div>
@@ -313,36 +359,23 @@
     </section>
 
 
+    <!-- ABOUT -->
     <section id="about">
 
-        <div class="title">
-            <h2>About Me</h2>
-            <p>Who I am</p>
-        </div>
+        <h2 class="section-title">Profile</h2>
 
-        <div class="about">
+        <div class="about-box">
 
             <p>
-                I am a B.Tech Artificial Intelligence and Machine
-                Learning student with a foundation in Machine Learning,
-                Deep Learning and modern AI technologies.
-            </p>
-
-            <br>
-
-            <p>
-                I am familiar with Python, JavaScript, React,
-                TensorFlow, Keras and Scikit-learn. I am particularly
-                interested in AI applications in healthcare and
-                intelligent systems.
-            </p>
-
-            <br>
-
-            <p>
-                My goal is to strengthen my technical and research
-                skills and build a career in Artificial Intelligence
-                and Machine Learning.
+                B.Tech Artificial Intelligence and Machine Learning student
+                with a foundation in Machine Learning, Deep Learning, and
+                modern AI technologies. Familiar with Python, Javascript,
+                React, TensorFlow/Keras, Scikit-learn, and data analysis tools.
+                Particularly interested in AI applications in healthcare and
+                intelligent systems, with a growing interest in research and
+                emerging technologies. A motivated and adaptable fresher,
+                eager to learn, gain professional experience, and build a
+                career in Artificial Intelligence and Machine Learning.
             </p>
 
         </div>
@@ -350,45 +383,41 @@
     </section>
 
 
+    <!-- EDUCATION -->
     <section id="education">
 
-        <div class="title">
-            <h2>Education</h2>
-            <p>My academic journey</p>
-        </div>
+        <h2 class="section-title">Education</h2>
 
-        <div class="education">
+        <div class="education-container">
 
-            <div class="education-box">
+            <div class="education-card">
 
                 <h3>S-VYASA Deemed to be University</h3>
 
-                <p>
-                    B.Tech Artificial Intelligence & Machine Learning
+                <p>B.Tech - Artificial Intelligence & Machine Learning</p>
+
+                <p class="year">
+                    2024 - 2028 (Expected)
                 </p>
 
-                <p>
-                    2024 - 2028 | Bengaluru, Karnataka
-                </p>
-
-                <p>
-                    Currently pursuing 5th Semester
-                </p>
+                <p>Bengaluru, Karnataka</p>
 
             </div>
 
 
-            <div class="education-box">
+            <div class="education-card">
 
                 <h3>Sri Edu PU College</h3>
 
                 <p>
-                    Pre-University Education
+                    2nd PUC (Class 12) - 2023-2024
                 </p>
 
                 <p>
-                    2022 - 2024 | Bengaluru, Karnataka
+                    1st PUC (Class 11) - 2022-2023
                 </p>
+
+                <p>Bengaluru, Karnataka</p>
 
             </div>
 
@@ -397,106 +426,87 @@
     </section>
 
 
+    <!-- SKILLS -->
     <section id="skills">
 
-        <div class="title">
-            <h2>Technical Skills</h2>
-            <p>My current technical knowledge</p>
-        </div>
+        <h2 class="section-title">Technical Skills</h2>
 
-        <div class="skills">
+        <div class="skills-container">
 
-            <div class="skill-box">
+
+            <div class="skill-card">
 
                 <h3>Programming</h3>
 
-                <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>C - Basic</li>
-                </ul>
+                <p>
+                    Python, JavaScript, C (Basic)
+                </p>
 
             </div>
 
 
-            <div class="skill-box">
+            <div class="skill-card">
 
                 <h3>Web Development</h3>
 
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
+                <p>
+                    HTML, CSS, React
+                </p>
 
             </div>
 
 
-            <div class="skill-box">
+            <div class="skill-card">
 
                 <h3>Machine Learning</h3>
 
-                <ul>
-                    <li>Supervised Learning</li>
-                    <li>Unsupervised Learning</li>
-                    <li>Regression</li>
-                    <li>Classification</li>
-                    <li>KNN</li>
-                    <li>Decision Trees</li>
-                    <li>Random Forest</li>
-                    <li>Naive Bayes</li>
-                    <li>K-Means</li>
-                    <li>Ensemble Learning</li>
-                </ul>
+                <p>
+                    Supervised & Unsupervised Learning,
+                    Regression, Classification, KNN,
+                    Decision Trees, Random Forest,
+                    Naive Bayes, K-Means,
+                    Ensemble Learning
+                </p>
 
             </div>
 
 
-            <div class="skill-box">
+            <div class="skill-card">
 
                 <h3>ML Fundamentals</h3>
 
-                <ul>
-                    <li>Train-Test Split</li>
-                    <li>Feature Scaling</li>
-                    <li>Overfitting & Underfitting</li>
-                    <li>Cross-Validation</li>
-                    <li>Confusion Matrix</li>
-                    <li>Accuracy, Precision, Recall & F1-Score</li>
-                </ul>
+                <p>
+                    Train-Test Split, Feature Scaling,
+                    Overfitting/Underfitting,
+                    Cross-Validation, Confusion Matrix,
+                    Accuracy, Precision, Recall,
+                    F1-Score
+                </p>
 
             </div>
 
 
-            <div class="skill-box">
+            <div class="skill-card">
 
                 <h3>Libraries & Frameworks</h3>
 
-                <ul>
-                    <li>NumPy</li>
-                    <li>Pandas</li>
-                    <li>Matplotlib</li>
-                    <li>Scikit-learn</li>
-                    <li>TensorFlow</li>
-                    <li>Keras</li>
-                </ul>
+                <p>
+                    NumPy, Pandas, Matplotlib,
+                    Scikit-learn, TensorFlow/Keras
+                </p>
 
             </div>
 
 
-            <div class="skill-box">
+            <div class="skill-card">
 
                 <h3>Currently Learning</h3>
 
-                <ul>
-                    <li>SQL</li>
-                    <li>Database Concepts</li>
-                    <li>Deep Learning</li>
-                    <li>CNN</li>
-                    <li>Flutter</li>
-                    <li>Dart</li>
-                </ul>
+                <p>
+                    SQL & Database Concepts<br>
+                    Deep Learning<br>
+                    CNN
+                </p>
 
             </div>
 
@@ -505,199 +515,90 @@
     </section>
 
 
-    <section id="projects">
+    <!-- INTERESTS -->
+    <section id="interests">
 
-        <div class="title">
-            <h2>Projects</h2>
-            <p>Selected projects</p>
-        </div>
+        <h2 class="section-title">Areas of Interest</h2>
 
-        <div class="projects">
-
-
-            <div class="project">
-
-                <h3>Multimodal Emotion & Stress Recognition</h3>
-
-                <p>
-                    A deep learning project focused on recognizing
-                    human emotions and stress-related patterns using
-                    multimodal information.
-                </p>
-
-                <div class="technology">
-                    Python | TensorFlow | Keras | CNN-LSTM
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>Smart Disaster Coordination Platform</h3>
-
-                <p>
-                    A Flutter-based mobile application concept for
-                    disaster coordination using location services,
-                    maps, notifications and offline capabilities.
-                </p>
-
-                <div class="technology">
-                    Flutter | Dart | Maps | Mobile Development
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>Rice Classification Using Machine Learning</h3>
-
-                <p>
-                    An image classification project exploring the
-                    classification of four rice varieties using
-                    machine learning and deep learning techniques.
-                </p>
-
-                <div class="technology">
-                    Python | TensorFlow | Keras
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>GlamFit - Virtual Try-On</h3>
-
-                <p>
-                    A team project exploring an image-based virtual
-                    try-on experience. Contributed to implementation
-                    and the image-based fitting workflow.
-                </p>
-
-                <div class="technology">
-                    HTML | CSS | JavaScript | React
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="research">
-
-        <div class="title">
-            <h2>Research Interests</h2>
-            <p>Areas I want to explore</p>
-        </div>
-
-        <div class="research-box">
-
-            <h3>AI for Healthcare & Intelligent Systems</h3>
+        <div class="interest-box">
 
             <p>
-                I am interested in research at the intersection of
-                Artificial Intelligence, Machine Learning and
-                healthcare. My interests include Medical AI,
-                Deep Learning, Multimodal AI, reliable AI systems
-                and intelligent decision-support systems.
+                Artificial Intelligence &nbsp; • &nbsp;
+                Machine Learning &nbsp; • &nbsp;
+                Deep Learning &nbsp; • &nbsp;
+                AI in Healthcare &nbsp; • &nbsp;
+                Intelligent Systems &nbsp; • &nbsp;
+                Research &nbsp; • &nbsp;
+                Emerging Technologies
             </p>
 
-            <div class="research-tags">
-
-                <span class="tag">Medical AI</span>
-                <span class="tag">AI in Healthcare</span>
-                <span class="tag">Deep Learning</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Multimodal AI</span>
-                <span class="tag">Reliable AI</span>
-
-            </div>
-
         </div>
 
     </section>
 
 
-    <section id="certifications">
-
-        <div class="title">
-            <h2>Certifications & Activities</h2>
-            <p>Learning and extracurricular experiences</p>
-        </div>
-
-        <div class="certificates">
-
-            <div class="certificate">
-                <h3>L&T EduTech Certificate of Excellence</h3>
-                <p>2025</p>
-            </div>
-
-            <div class="certificate">
-                <h3>Codeverse Summer Special Program</h3>
-                <p>2025</p>
-            </div>
-
-            <div class="certificate">
-                <h3>TEDx Volunteering</h3>
-                <p>2025</p>
-            </div>
-
-            <div class="certificate">
-                <h3>Rakuten Conference</h3>
-                <p>2025</p>
-            </div>
-
-            <div class="certificate">
-                <h3>Smart India Hackathon</h3>
-                <p>2025</p>
-            </div>
-
-            <div class="certificate">
-                <h3>Hackathons & Project Exhibitions</h3>
-                <p>Participation in technical and creative activities.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
+    <!-- CONTACT -->
     <section id="contact">
 
-        <div class="contact">
+        <h2 class="section-title">Contact</h2>
 
-            <div class="title">
-                <h2>Let's Connect</h2>
-                <p>Interested in AI, ML and research? Let's connect.</p>
+        <div class="contact-container">
+
+
+            <div class="contact-card">
+
+                <h3>Email</h3>
+
+                <a href="mailto:vj224057@gmail.com">
+                    vj224057@gmail.com
+                </a>
+
             </div>
 
-            <a
-                class="button"
-                href="https://github.com/jeeva-v606"
-                target="_blank">
-                GitHub
-            </a>
 
-            <a
-                class="button"
-                href="https://www.linkedin.com/"
-                target="_blank">
-                LinkedIn
-            </a>
+            <div class="contact-card">
+
+                <h3>Phone</h3>
+
+                <a href="tel:8296992469">
+                    8296992469
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>Location</h3>
+
+                <p>
+                    Bengaluru, Banashankari
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>LinkedIn</h3>
+
+                <a href="https://www.linkedin.com/in/jeeva-v-94592138B"
+                   target="_blank">
+                    linkedin.com/in/jeeva-v-94592138B
+                </a>
+
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- FOOTER -->
     <footer>
 
         <p>
-            © 2026 Jeeva V. | AI/ML Portfolio
+            © 2026 Jeeva V | AI & ML Portfolio
         </p>
 
     </footer>
