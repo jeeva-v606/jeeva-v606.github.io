@@ -1,575 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Jeeva V | AI & ML Portfolio</title>
 
     <style>
-
-        /* =========================
-           BASIC SETTINGS
-        ========================= */
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
             color: #1f2937;
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           NAVIGATION BAR
-        ========================= */
-
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-
-            background: rgba(255, 255, 255, 0.97);
-
+            background: white;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            padding: 18px 8%;
-
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-
-            z-index: 1000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         .logo {
-            font-size: 23px;
+            font-size: 24px;
             font-weight: bold;
-            color: #111827;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
         }
 
-        nav ul li a {
-            color: #374151;
-            font-size: 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
+        nav a:hover {
             color: #2563eb;
         }
 
-
-        /* =========================
-           HOME SECTION
-        ========================= */
-
         .hero {
-            min-height: 100vh;
-
+            min-height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
-
             text-align: center;
-
-            padding: 120px 20px 70px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #eef4ff,
-                    #ffffff
-                );
-        }
-
-        .hero-content {
-            max-width: 850px;
+            padding: 40px 20px;
+            background: #eef4ff;
         }
 
         .hero h1 {
-            font-size: 68px;
-            font-weight: 800;
-            color: #111827;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            font-size: 60px;
+            margin-bottom: 15px;
         }
 
         .hero h2 {
-            font-size: 25px;
-            font-weight: 600;
             color: #2563eb;
-            margin-bottom: 25px;
+            font-size: 25px;
+            margin-bottom: 20px;
         }
 
         .hero p {
             max-width: 700px;
             margin: auto;
-
             font-size: 18px;
-            color: #4b5563;
+            color: #555;
         }
 
-        .buttons {
-            margin-top: 35px;
-        }
-
-        .btn {
+        .button {
             display: inline-block;
-
-            padding: 13px 27px;
-
-            margin: 5px;
-
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
             border-radius: 8px;
-
+            text-decoration: none;
             font-weight: bold;
-
-            transition: 0.3s;
         }
 
-        .primary {
-            background: #2563eb;
-            color: white;
-        }
-
-        .primary:hover {
+        .button:hover {
             background: #1d4ed8;
-            transform: translateY(-3px);
         }
-
-        .secondary {
-            border: 2px solid #2563eb;
-            color: #2563eb;
-        }
-
-        .secondary:hover {
-            background: #2563eb;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
 
         section {
-            padding: 90px 8%;
+            padding: 80px 8%;
         }
 
-        .section-title {
+        .title {
             text-align: center;
-
-            font-size: 36px;
-
-            color: #111827;
-
-            margin-bottom: 45px;
+            font-size: 35px;
+            margin-bottom: 40px;
         }
 
-        .section-title::after {
-            content: "";
-
-            display: block;
-
-            width: 65px;
-            height: 4px;
-
-            background: #2563eb;
-
-            margin: 12px auto;
-
-            border-radius: 10px;
-        }
-
-
-        /* =========================
-           PROFILE SECTION
-        ========================= */
-
-        .profile-container {
-            max-width: 950px;
-
+        .box {
+            max-width: 900px;
             margin: auto;
-
             background: white;
-
-            padding: 40px;
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.06);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         }
 
-        .profile-container p {
+        .box p {
+            color: #555;
             font-size: 17px;
-
-            color: #4b5563;
-
-            text-align: justify;
         }
 
-
-        /* =========================
-           EDUCATION
-        ========================= */
-
-        .education-container {
-            max-width: 950px;
-
+        .education {
+            max-width: 900px;
             margin: auto;
         }
 
         .education-card {
             background: white;
-
             padding: 30px;
-
-            margin-bottom: 25px;
-
-            border-radius: 12px;
-
+            margin-bottom: 20px;
             border-left: 5px solid #2563eb;
-
-            box-shadow:
-                0 7px 25px rgba(0, 0, 0, 0.06);
-
-            transition: 0.3s;
-        }
-
-        .education-card:hover {
-            transform: translateY(-4px);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         }
 
         .education-card h3 {
             font-size: 22px;
-
-            color: #111827;
-
             margin-bottom: 10px;
         }
 
         .education-card p {
-            color: #4b5563;
-
-            margin: 4px 0;
+            color: #555;
+            margin: 5px 0;
         }
 
-        .education-year {
-            color: #2563eb !important;
+        .skills {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
+        .skill {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .skill h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #555;
+        }
+
+        .interests {
+            text-align: center;
+        }
+
+        .tags {
+            margin-top: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef4ff;
+            color: #2563eb;
+            padding: 10px 18px;
+            margin: 6px;
+            border-radius: 20px;
             font-weight: bold;
         }
 
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills-container {
-            max-width: 1100px;
-
+        .contact {
+            max-width: 900px;
             margin: auto;
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 7px 25px rgba(0, 0, 0, 0.06);
-
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
-            color: #2563eb;
-
-            font-size: 20px;
-
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            color: #4b5563;
-
-            font-size: 16px;
-        }
-
-
-        /* =========================
-           AREAS OF INTEREST
-        ========================= */
-
-        .interest-container {
-            max-width: 950px;
-
-            margin: auto;
-
-            background: white;
-
-            padding: 40px;
-
-            border-radius: 15px;
-
-            text-align: center;
-
-            box-shadow:
-                0 8px 30px rgba(0, 0, 0, 0.06);
-        }
-
-        .interest-container p {
-            color: #4b5563;
-
-            font-size: 18px;
-        }
-
-        .interest-list {
-            margin-top: 25px;
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-        }
-
-        .interest-tag {
-            padding: 10px 18px;
-
-            background: #eef4ff;
-
-            color: #2563eb;
-
-            border-radius: 30px;
-
-            font-weight: 600;
-
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-container {
-            max-width: 1000px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .contact-card {
             background: white;
-
-            padding: 30px;
-
-            border-radius: 12px;
-
+            padding: 25px;
             text-align: center;
-
-            box-shadow:
-                0 7px 25px rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         }
 
         .contact-card h3 {
             color: #2563eb;
-
             margin-bottom: 10px;
         }
 
-        .contact-card p,
         .contact-card a {
-            color: #4b5563;
-
+            color: #333;
+            text-decoration: none;
             word-break: break-word;
         }
 
-        .contact-card a:hover {
-            color: #2563eb;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
         footer {
             background: #111827;
-
             color: white;
-
             text-align: center;
-
             padding: 25px;
         }
 
-        footer p {
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           MOBILE RESPONSIVE
-        ========================= */
-
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
 
             nav {
-                padding: 15px 5%;
+                display: block;
+                text-align: center;
             }
 
-            nav ul {
-                display: none;
+            nav a {
+                display: inline-block;
+                margin: 10px 5px;
             }
 
             .hero h1 {
-                font-size: 43px;
+                font-size: 42px;
             }
 
             .hero h2 {
                 font-size: 20px;
             }
 
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 70px 5%;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            .skills-container {
+            .skills {
                 grid-template-columns: 1fr;
             }
 
-            .contact-container {
+            .contact {
                 grid-template-columns: 1fr;
             }
-
-            .profile-container {
-                padding: 25px;
-            }
-
-            .profile-container p {
-                text-align: left;
-            }
-
-            .education-card {
-                padding: 25px;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
-
     <nav>
+        <div class="logo">JEEVA V</div>
 
-        <div class="logo">
-            JEEVA V
+        <div>
+            <a href="#home">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
         </div>
-
-        <ul>
-
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#profile">Profile</a>
-            </li>
-
-            <li>
-                <a href="#education">Education</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#interests">Interests</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
     </nav>
 
 
-
-    <!-- =========================
-         HOME
-    ========================= -->
-
     <section class="hero" id="home">
 
-        <div class="hero-content">
-
-            <h1>
-                JEEVA V
-            </h1>
+        <div>
+            <h1>JEEVA V</h1>
 
             <h2>
                 B.Tech Artificial Intelligence & Machine Learning
@@ -581,43 +280,22 @@
                 and modern AI technologies.
             </p>
 
-            <div class="buttons">
-
-                <a
-                    href="#profile"
-                    class="btn primary"
-                >
-                    Explore My Profile
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/in/jeeva-v-94592138B"
-                    target="_blank"
-                    class="btn secondary"
-                >
-                    View LinkedIn
-                </a>
-
-            </div>
-
+            <a
+                class="button"
+                href="#profile"
+            >
+                Explore My Profile
+            </a>
         </div>
 
     </section>
 
 
-
-    <!-- =========================
-         PROFILE
-    ========================= -->
-
     <section id="profile">
 
-        <h2 class="section-title">
-            Profile
-        </h2>
+        <h2 class="title">Profile</h2>
 
-        <div class="profile-container">
+        <div class="box">
 
             <p>
                 B.Tech Artificial Intelligence and Machine Learning student
@@ -636,50 +314,34 @@
     </section>
 
 
-
-    <!-- =========================
-         EDUCATION
-    ========================= -->
-
     <section id="education">
 
-        <h2 class="section-title">
-            Education
-        </h2>
+        <h2 class="title">Education</h2>
 
-        <div class="education-container">
-
-
-            <!-- UNIVERSITY -->
+        <div class="education">
 
             <div class="education-card">
 
-                <h3>
-                    S-VYASA Deemed to be University
-                </h3>
+                <h3>S-VYASA Deemed to be University</h3>
 
                 <p>
-                    B.Tech - Artificial Intelligence & Machine Learning
-                </p>
-
-                <p class="education-year">
-                    2024 - 2028 (Expected)
+                    B.Tech - AI & ML
                 </p>
 
                 <p>
-                    Bengaluru, Karnataka
+                    2024-2028 (Expected)
+                </p>
+
+                <p>
+                    Bengaluru
                 </p>
 
             </div>
 
 
-            <!-- PU COLLEGE -->
-
             <div class="education-card">
 
-                <h3>
-                    Sri Edu PU College
-                </h3>
+                <h3>Sri Edu PU College</h3>
 
                 <p>
                     2nd PUC (Class 12) - 2023-2024
@@ -695,64 +357,35 @@
 
             </div>
 
-
         </div>
 
     </section>
 
 
-
-    <!-- =========================
-         TECHNICAL SKILLS
-    ========================= -->
-
     <section id="skills">
 
-        <h2 class="section-title">
-            Technical Skills
-        </h2>
+        <h2 class="title">Technical Skills</h2>
 
-        <div class="skills-container">
+        <div class="skills">
 
-
-            <!-- PROGRAMMING -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Programming
-                </h3>
-
+            <div class="skill">
+                <h3>Programming</h3>
                 <p>
                     Python, JavaScript, C (Basic)
                 </p>
-
             </div>
 
 
-            <!-- WEB -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Web
-                </h3>
-
+            <div class="skill">
+                <h3>Web</h3>
                 <p>
                     HTML, CSS, React
                 </p>
-
             </div>
 
 
-            <!-- MACHINE LEARNING -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Machine Learning
-                </h3>
-
+            <div class="skill">
+                <h3>Machine Learning</h3>
                 <p>
                     Supervised & Unsupervised Learning,
                     Regression, Classification, KNN,
@@ -760,18 +393,11 @@
                     Naive Bayes, K-Means,
                     Ensemble Learning
                 </p>
-
             </div>
 
 
-            <!-- ML FUNDAMENTALS -->
-
-            <div class="skill-card">
-
-                <h3>
-                    ML Fundamentals
-                </h3>
-
+            <div class="skill">
+                <h3>ML Fundamentals</h3>
                 <p>
                     Train-Test Split, Feature Scaling,
                     Overfitting/Underfitting,
@@ -779,113 +405,79 @@
                     Accuracy, Precision, Recall,
                     F1-Score
                 </p>
-
             </div>
 
 
-            <!-- LIBRARIES -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Libraries
-                </h3>
-
+            <div class="skill">
+                <h3>Libraries</h3>
                 <p>
                     NumPy, Pandas, Matplotlib,
                     Scikit-learn, TensorFlow/Keras
                 </p>
-
             </div>
 
 
-            <!-- DATABASE -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Database
-                </h3>
-
+            <div class="skill">
+                <h3>Database</h3>
                 <p>
                     SQL & Database Concepts
-                    <br>
-                    <strong>(Learning)</strong>
+                    (Learning)
                 </p>
-
             </div>
 
 
-            <!-- DEEP LEARNING -->
-
-            <div class="skill-card">
-
-                <h3>
-                    Deep Learning
-                </h3>
-
+            <div class="skill">
+                <h3>Deep Learning</h3>
                 <p>
                     Deep Learning, CNN
-                    <br>
-                    <strong>(Learning)</strong>
+                    (Learning)
                 </p>
-
             </div>
-
 
         </div>
 
     </section>
 
 
-
-    <!-- =========================
-         AREAS OF INTEREST
-    ========================= -->
-
     <section id="interests">
 
-        <h2 class="section-title">
-            Areas of Interest
-        </h2>
+        <h2 class="title">Areas of Interest</h2>
 
-        <div class="interest-container">
+        <div class="box interests">
 
             <p>
-                Interested in Artificial Intelligence,
-                Machine Learning, healthcare applications,
-                intelligent systems, research and
-                emerging technologies.
+                Particularly interested in AI applications in healthcare
+                and intelligent systems, with a growing interest in
+                research and emerging technologies.
             </p>
 
+            <div class="tags">
 
-            <div class="interest-list">
-
-                <span class="interest-tag">
+                <span class="tag">
                     Artificial Intelligence
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     Machine Learning
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     Deep Learning
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     AI in Healthcare
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     Intelligent Systems
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     Research
                 </span>
 
-                <span class="interest-tag">
+                <span class="tag">
                     Emerging Technologies
                 </span>
 
@@ -896,61 +488,37 @@
     </section>
 
 
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
     <section id="contact">
 
-        <h2 class="section-title">
-            Contact
-        </h2>
+        <h2 class="title">Contact</h2>
 
-        <div class="contact-container">
-
-
-            <!-- EMAIL -->
+        <div class="contact">
 
             <div class="contact-card">
 
-                <h3>
-                    Email
-                </h3>
+                <h3>Email</h3>
 
                 <a href="mailto:vj224057@gmail.com">
-
                     vj224057@gmail.com
-
                 </a>
 
             </div>
 
 
-            <!-- PHONE -->
-
             <div class="contact-card">
 
-                <h3>
-                    Phone
-                </h3>
+                <h3>Phone</h3>
 
                 <a href="tel:8296992469">
-
                     8296992469
-
                 </a>
 
             </div>
 
 
-            <!-- LOCATION -->
-
             <div class="contact-card">
 
-                <h3>
-                    Location
-                </h3>
+                <h3>Location</h3>
 
                 <p>
                     Bengaluru, Banashankari
@@ -959,33 +527,23 @@
             </div>
 
 
-            <!-- LINKEDIN -->
-
             <div class="contact-card">
 
-                <h3>
-                    LinkedIn
-                </h3>
+                <h3>LinkedIn</h3>
 
                 <a
                     href="https://www.linkedin.com/in/jeeva-v-94592138B"
                     target="_blank"
                 >
-                    linkedin.com/in/jeeva-v-94592138B
+                    LinkedIn Profile
                 </a>
 
             </div>
-
 
         </div>
 
     </section>
 
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
 
     <footer>
 
@@ -995,7 +553,5 @@
 
     </footer>
 
-
 </body>
-
 </html>
